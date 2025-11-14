@@ -39,8 +39,8 @@ Put your answers into separate files: `docs/vision.md`, `docs/user-stories.md`, 
 
 ### Example Prompt
 ```
-I’m comfortable with [React/Node/etc].
-I’m building [project summary].
+I'm comfortable with [React/Express/Node].
+I'm building project with vision, user stories and requirements described in files @docs/vision.md, @docs/user-stories.md, @docs/requirements.md.
 	1.	Suggest full stack (frontend, backend, DB, auth)
 	2.	Explain pros/cons
 	3.	Draw high-level architecture

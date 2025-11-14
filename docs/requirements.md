@@ -194,7 +194,7 @@ tickets:
 - `NODE_ENV` - Environment (development/production)
 
 ### Technology Requirements
-- **Backend:** Node.js (v18+), Express.js
+- **Backend:** Node.js (v22+), Express.js
 - **Frontend:** React (v18+), Tailwind CSS
 - **Database:** MongoDB or PostgreSQL
 - **AI Service:** OpenAI API, Anthropic Claude API, or similar
