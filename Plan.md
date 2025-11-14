@@ -94,14 +94,16 @@ Provide:
 Put your answers into separate file: `docs/project-setup.md`.
 ```
 
+### Output Files
+- `docs/project-setup.md`
+- Full project scaffold in Git
+
 ```
 Create a clean project structure for an app with these features: User Story 1: Customer Submitting a Ticket based on the model project setup from @project-setup.md 
 ```
 
 ### Output Files
-- `docs/project-setup.md`
-- Full project scaffold in Git
-
+- In my example 51 files were added to the project
 
 ## 5. Design Screens & Components With AI
 
