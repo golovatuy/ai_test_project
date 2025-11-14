@@ -2,9 +2,10 @@ import OpenAI from 'openai';
 import logger from '../utils/logger.js';
 import { TICKET_CATEGORIES, TICKET_PRIORITIES } from '../utils/constants.js';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-});
+// Temporarily commented out OpenAI initialization for testing without API key
+// const openai = new OpenAI({
+//   apiKey: process.env.OPENAI_API_KEY
+// });
 
 const AI_MODEL = process.env.OPENAI_MODEL || 'gpt-3.5-turbo';
 
@@ -14,6 +15,24 @@ const AI_MODEL = process.env.OPENAI_MODEL || 'gpt-3.5-turbo';
  * @returns {Promise<Object>} AI processing results
  */
 export const processTicketWithAI = async (ticketData) => {
+  // Temporarily skip AI processing if API key is not available
+  if (!process.env.OPENAI_API_KEY) {
+    logger.warn('OPENAI_API_KEY not set, skipping AI processing and using defaults');
+    return {
+      category: 'General Inquiry',
+      priority: 'Medium',
+      summary: null,
+      aiConfidence: null,
+      aiProcessingError: 'AI service disabled: OPENAI_API_KEY not configured',
+      aiProcessedAt: null
+    };
+  }
+
+  // Initialize OpenAI client only if API key is available
+  const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY
+  });
+
   try {
     const prompt = `Analyze the following support ticket and provide:
 1. Category (one of: ${TICKET_CATEGORIES.join(', ')})

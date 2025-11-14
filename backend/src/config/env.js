@@ -2,7 +2,7 @@ import 'dotenv/config';
 
 const requiredEnvVars = [
   'MONGODB_URI',
-  'OPENAI_API_KEY',
+  // 'OPENAI_API_KEY', // Temporarily commented out for testing without API key
   'PORT',
   'NODE_ENV'
 ];

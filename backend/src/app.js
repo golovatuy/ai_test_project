@@ -13,18 +13,41 @@ import logger from './utils/logger.js';
 // Validate environment variables
 validateEnv();
 
-// Connect to database
-connectDB();
+try {
+  connectDB().catch(err => {
+    logger.error('Database connection failed, but continuing:', err.message);
+  });
+} catch (err) {
+  logger.error('Database connection error:', err.message);
+}
 
 const app = express();
 
+// CORS middleware
+app.use(cors({
+  origin: true, // Allow all origins for development
+  credentials: true
+}));
+
 // Security middleware
-app.use(helmet());
-app.use(cors());
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: "cross-origin" },
+  contentSecurityPolicy: false // Disable CSP for API (can be enabled later with proper config)
+}));
 
 // Body parsing middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Debug middleware to log all requests
+app.use((req, res, next) => {
+  logger.info(`[DEBUG] ${req.method} ${req.path}`, {
+    headers: req.headers,
+    body: req.body,
+    query: req.query
+  });
+  next();
+});
 
 // Logging middleware
 if (process.env.NODE_ENV !== 'test') {
