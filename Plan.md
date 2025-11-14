@@ -63,7 +63,7 @@ Put your answers into separate files: `docs/architecture.md`, `docs/stack-decisi
 
 ### Example Prompt
 ```
-Based on these user stories (paste):
+Based on the user story: User Story 1: Customer Submitting a Ticket from the @user-stories.md  
 	1.	Create DB schema
 	2.	Define endpoints or GraphQL schema
 	3.	Provide example payloads
