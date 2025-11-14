@@ -83,16 +83,19 @@ Put your answers into separate files: `docs/domain-model.md`, `docs/api-contract
 - Generate initialization commands  
 - Suggest ESLint/Prettier/TS/Jest/Vitest configs  
 
-### Example Prompt
+### Examples Prompt
 
 ```
-I’m using [Next.js/Nest.js/React Native/etc].
-Create a clean project structure for an app with these features: […]
+Create a clean project structure for an app with these features: User Story 1: Customer Submitting a Ticket from the @user-stories.md based on the model from @domain-model.md and stack descision @stack-decisions.md
 Provide:
 	•	Folder tree
 	•	Initialization commands
 	•	Basic config files
 Put your answers into separate file: `docs/project-setup.md`.
+```
+
+```
+Create a clean project structure for an app with these features: User Story 1: Customer Submitting a Ticket based on the model project setup from @project-setup.md 
 ```
 
 ### Output Files

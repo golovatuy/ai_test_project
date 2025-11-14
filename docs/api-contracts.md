@@ -545,5 +545,3 @@ curl -X PUT http://localhost:3000/api/tickets/507f1f77bcf86cd799439011 \
 
 ---
 
-*API contracts may evolve as requirements change. Breaking changes will be communicated clearly.*
-
